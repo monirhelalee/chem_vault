@@ -26,11 +26,7 @@ class ChemicalsListPage extends ConsumerWidget {
                   : Icons.light_mode_outlined,
             ),
             onPressed: () {
-              ref
-                  .read(themeModeProvider.notifier)
-                  .state = themeMode == ThemeMode.light
-                  ? ThemeMode.dark
-                  : ThemeMode.light;
+              ref.read(themeModeProvider.notifier).toggle();
             },
           ),
         ],
