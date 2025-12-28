@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/theme_provider.dart';
 
 import '../providers/chemical_providers.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/chemical_card.dart';
 import '../../../../core/presentation/widgets/error_view.dart';
-import 'chemical_details_page.dart';
 
 class ChemicalsListPage extends ConsumerWidget {
   const ChemicalsListPage({super.key});
@@ -49,12 +49,9 @@ class ChemicalsListPage extends ConsumerWidget {
               return ChemicalCard(
                 chemical: chemical,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ChemicalDetailsPage(chemicalId: chemical.id),
-                    ),
+                  context.goNamed(
+                    'chemical_details',
+                    pathParameters: {'id': chemical.id},
                   );
                 },
               );
