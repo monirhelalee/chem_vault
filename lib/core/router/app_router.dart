@@ -1,14 +1,14 @@
+import 'package:chem_vault/features/chemicals/presentation/pages/chemical_details_page.dart';
+import 'package:chem_vault/features/chemicals/presentation/pages/chemicals_list_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import '../../features/chemicals/presentation/pages/chemical_details_page.dart';
-import '../../features/chemicals/presentation/pages/chemicals_list_page.dart';
 
 part 'app_router.g.dart';
 
 @riverpod
-GoRouter goRouter(GoRouterRef ref) {
+GoRouter goRouter(Ref ref) {
   return GoRouter(
     initialLocation: '/',
     debugLogDiagnostics: true,
